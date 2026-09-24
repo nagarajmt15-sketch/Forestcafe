@@ -7,6 +7,55 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var webpCache = {};
+
+  function buildWebpCandidate(src) {
+    if (!src || src.indexOf('toWEBP/') !== -1 || /\.webp$/i.test(src)) return null;
+    var filename = src.split('?')[0].split('/').pop();
+    if (!/\.(png|jpe?g)$/i.test(filename)) return null;
+    return 'toWEBP/' + filename.replace(/\.(png|jpe?g)$/i, '.webp');
+  }
+
+  function getPreferredImageSource(src) {
+    if (!src) return Promise.resolve(src);
+    var candidate = buildWebpCandidate(src);
+    if (!candidate) return Promise.resolve(src);
+
+    if (webpCache[src]) return Promise.resolve(webpCache[src]);
+
+    return new Promise(function (resolve) {
+      var probe = new Image();
+      probe.onload = function () {
+        webpCache[src] = candidate;
+        resolve(candidate);
+      };
+      probe.onerror = function () {
+        webpCache[src] = src;
+        resolve(src);
+      };
+      probe.src = candidate + '?webp-check=' + Date.now();
+    });
+  }
+
+  function applyWebpFallback() {
+    $$('img[src]').forEach(function (img) {
+      var src = img.getAttribute('src');
+      if (!src) return;
+      getPreferredImageSource(src).then(function (resolved) {
+        if (resolved !== src) img.setAttribute('src', resolved);
+      });
+    });
+
+    $$('video[poster]').forEach(function (video) {
+      var poster = video.getAttribute('poster');
+      if (!poster) return;
+      getPreferredImageSource(poster).then(function (resolved) {
+        if (resolved !== poster) video.setAttribute('poster', resolved);
+      });
+    });
+  }
+
+  applyWebpFallback();
 
   /* ---------- scroll lock ---------- */
   var locks = 0;
@@ -218,7 +267,10 @@
   function openLightbox(i) {
     if (!lb) return;
     lbIndex = (i + galleryImages.length) % galleryImages.length;
-    lbImg.src = galleryImages[lbIndex];
+    var selected = galleryImages[lbIndex];
+    getPreferredImageSource(selected).then(function (resolved) {
+      lbImg.src = resolved;
+    });
     lbImg.alt = 'Forest Cafe photo ' + (lbIndex + 1) + ' of ' + galleryImages.length;
     lbCounter.textContent = (lbIndex + 1) + ' / ' + galleryImages.length;
     lb.classList.add('is-open');
