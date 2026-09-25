@@ -2141,11 +2141,62 @@ textarea {
 }
 
 /* Rooms starts with exactly the same color */
+.stay-divider {
+    position: relative;
+    height: clamp(42px, 7vw, 88px);
+    background: transparent;
+    overflow: hidden;
+    margin-top: -4px;
+}
+
+    .stay-divider::before,
+    .stay-divider::after {
+        content: "";
+        position: absolute;
+        bottom: -48%;
+        width: clamp(120px, 16vw, 220px);
+        height: clamp(120px, 16vw, 220px);
+        background: var(--cream);
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .stay-divider::before {
+        left: -60px;
+    }
+
+    .stay-divider::after {
+        right: -60px;
+    }
+
+.stay-feature-banner {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: clamp(12px, 2vw, 26px);
+    background: #000;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .stay-feature-banner img {
+        display: block;
+        width: 100%;
+        height: clamp(620px, 74vw, 1050px);
+        object-fit: cover;
+        object-position: center center;
+        filter: saturate(0.9) contrast(1.05);
+    }
+
 #rooms {
     position: relative;
     z-index: 2;
     margin-top: 0;
+    padding-bottom: clamp(42px, 6vw, 100px);
     background: var(--cream);
+}
+
+#reviews {
+    padding-top: clamp(18px, 3vw, 32px);
 }
 
 .cot-copy {
@@ -2329,7 +2380,7 @@ textarea {
         display: block;
         transition: transform 0.45s ease;
         border-radius: 18px;
-        background: #f5f2ea;
+        background: transparent;
     }
 
 .room-card:hover .room-img-wrap img {
