@@ -16,7 +16,7 @@
 <meta content="CafeImg/cafe-01.jpg" property="og:image"/>
 <meta content="en_IN" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%23384F31'/&gt;&lt;path d='M72 30c-30 7-44 24-48 42l3 6 3-5c12-21 30-31 42-43z' fill='%23D8E9CB'/&gt;&lt;path d='M72 30C56 22 40 25 32 34c-9 10-6 25 4 33l-3 5c-13-10-17-28-7-40 11-13 33-15 46-2z' fill='%239DC77F'/&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="logo.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -44,7 +44,7 @@
         }
     </script>
 </head>
-<body>
+<body data-page="site">
 <a class="skip-link" href="#main">Skip to content</a>
 <div aria-hidden="true" class="progress-bar" id="progressBar"></div>
 <!-- ============ PRELOADER ============ -->
@@ -99,8 +99,8 @@
                 </svg>
                 Icon of Kalrayan Hills
             </span>
-            <h1 class="hero-title">Coffee, farm<br />and a place to stay</h1>
-            <p class="hero-tag">
+            <h1 class="hero-title" data-cms="heroTitle">Coffee, farm<br />and a place to stay</h1>
+            <p class="hero-tag" data-cms="heroText">
                 We grow it on the slope behind the kitchen, roast it here, and pour it while the
                 mist is still coming off the hills.
             </p>
@@ -156,8 +156,8 @@
                     </svg>
                     Welcome to
                 </span>
-                <h2 class="headline headline--xl">Forest Cafe</h2>
-                <p class="lede">
+                <h2 class="headline headline--xl" data-cms="aboutTitle">Forest Cafe</h2>
+                <p class="lede" data-cms="aboutText">
                     We started in 2019 with four tables, one roaster and a slope full of coffee plants.
                     Today the same slope feeds the kitchen, the shop and the six rooms behind the cafe.
                     Nothing travels far here — most of it walks down the hill in the morning.
@@ -701,83 +701,77 @@
                 <p class="lede">Packed the week it is milled, with the same care and freshness from our farm.</p>
             </div>
             <div class="products-grid reveal" id="productsGrid">
-                <article class="product-card" data-id="prod-1" data-img="farm/item1%20(1).png" data-name="Farm Product 1">
-                    <div class="product-img-wrap"><img alt="Farm product 1" loading="lazy" src="farm/item1%20(1).png" /></div>
-                    <h3 class="product-title">Farm Product 1</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Small-batch product packed with care and natural goodness.</p>
+                <article class="product-card" data-id="prod-1" data-img="toWEBP/farmproducts/1-pure-coffee.webp" data-name="Pure Coffee">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Pure Coffee" loading="lazy" src="toWEBP/farmproducts/1-pure-coffee.webp" /></div>
+                    <h3 class="product-title">Pure Coffee</h3>
+                    <p class="product-weight">Freshly roasted</p>
+                    <p class="product-desc">Freshly roasted coffee made from carefully selected beans grown with the rich character of the Kalvarayan Hills.</p>
                 </article>
-                <article class="product-card" data-id="prod-2" data-img="farm/item1%20(2).png" data-name="Farm Product 2">
-                    <div class="product-img-wrap"><img alt="Farm product 2" loading="lazy" src="farm/item1%20(2).png" /></div>
-                    <h3 class="product-title">Farm Product 2</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Handpicked and prepared to keep the original farm taste intact.</p>
+                <article class="product-card" data-id="prod-2" data-img="toWEBP/farmproducts/2-70-30.webp" data-name="70/30 Coffee Blend">
+                    <div class="product-img-wrap"><img alt="Forest Cafe 70/30 Coffee Blend" loading="lazy" src="toWEBP/farmproducts/2-70-30.webp" /></div>
+                    <h3 class="product-title">70/30 Coffee Blend</h3>
+                    <p class="product-weight">Balanced and aromatic</p>
+                    <p class="product-desc">A balanced blend crafted for a smooth, aromatic cup with the rich body and character of freshly roasted coffee.</p>
                 </article>
-                <article class="product-card" data-id="prod-3" data-img="farm/item1%20(3).png" data-name="Farm Product 3">
-                    <div class="product-img-wrap"><img alt="Farm product 3" loading="lazy" src="farm/item1%20(3).png" /></div>
-                    <h3 class="product-title">Farm Product 3</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Naturally grown ingredients prepared with the same care as our cafe kitchen.</p>
+                <article class="product-card" data-id="prod-3" data-img="toWEBP/farmproducts/3-80-20.webp" data-name="80/20 Coffee Blend">
+                    <div class="product-img-wrap"><img alt="Forest Cafe 80/20 Coffee Blend" loading="lazy" src="toWEBP/farmproducts/3-80-20.webp" /></div>
+                    <h3 class="product-title">80/20 Coffee Blend</h3>
+                    <p class="product-weight">Fuller body</p>
+                    <p class="product-desc">A fuller and richer coffee blend with a smooth finish, created for those who enjoy a stronger everyday cup.</p>
                 </article>
-                <article class="product-card" data-id="prod-4" data-img="farm/item1%20(4).png" data-name="Farm Product 4">
-                    <div class="product-img-wrap"><img alt="Farm product 4" loading="lazy" src="farm/item1%20(4).png" /></div>
-                    <h3 class="product-title">Farm Product 4</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">A wholesome farm product made in small batches for rich taste and freshness.</p>
+                <article class="product-card" data-id="prod-4" data-img="toWEBP/farmproducts/4-tea-powder.webp" data-name="Tea Dust">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Tea Dust" loading="lazy" src="toWEBP/farmproducts/4-tea-powder.webp" /></div>
+                    <h3 class="product-title">Tea Dust</h3>
+                    <p class="product-weight">Refreshing everyday tea</p>
+                    <p class="product-desc">Fine tea dust selected for a rich colour, refreshing aroma and a comforting cup of everyday tea.</p>
                 </article>
-                <article class="product-card" data-id="prod-5" data-img="farm/item1%20(5).png" data-name="Farm Product 5">
-                    <div class="product-img-wrap"><img alt="Farm product 5" loading="lazy" src="farm/item1%20(5).png" /></div>
-                    <h3 class="product-title">Farm Product 5</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Pure, natural, and full of flavor from our hillside garden and kitchen.</p>
+                <article class="product-card" data-id="prod-5" data-img="toWEBP/farmproducts/5-honey.webp" data-name="Honey">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Honey" loading="lazy" src="toWEBP/farmproducts/5-honey.webp" /></div>
+                    <h3 class="product-title">Honey</h3>
+                    <p class="product-weight">Pure and natural</p>
+                    <p class="product-desc">Pure natural honey with a rich golden sweetness, sourced with care and bottled to preserve its natural character.</p>
                 </article>
-                <article class="product-card" data-id="prod-6" data-img="farm/item1%20(6).png" data-name="Farm Product 6">
-                    <div class="product-img-wrap"><img alt="Farm product 6" loading="lazy" src="farm/item1%20(6).png" /></div>
-                    <h3 class="product-title">Farm Product 6</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">A traditional farm staple prepared with natural ingredients and slow care.</p>
+                <article class="product-card" data-id="prod-6" data-img="toWEBP/farmproducts/6-curryleaf-powder.webp" data-name="Curry Leaf Powder">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Curry Leaf Powder" loading="lazy" src="toWEBP/farmproducts/6-curryleaf-powder.webp" /></div>
+                    <h3 class="product-title">Curry Leaf Powder</h3>
+                    <p class="product-weight">Aromatic and earthy</p>
+                    <p class="product-desc">Aromatic curry leaf powder made from carefully dried curry leaves, adding a distinctive earthy flavour to everyday dishes.</p>
                 </article>
-                <article class="product-card" data-id="prod-7" data-img="farm/item1%20(7).png" data-name="Farm Product 7">
-                    <div class="product-img-wrap"><img alt="Farm product 7" loading="lazy" src="farm/item1%20(7).png" /></div>
-                    <h3 class="product-title">Farm Product 7</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">A handcrafted product from the farm, packed to preserve its natural aroma.</p>
+                <article class="product-card" data-id="prod-7" data-img="toWEBP/farmproducts/7-idly-podi.webp" data-name="Idli Podi">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Idli Podi" loading="lazy" src="toWEBP/farmproducts/7-idly-podi.webp" /></div>
+                    <h3 class="product-title">Idli Podi</h3>
+                    <p class="product-weight">Traditional breakfast spice</p>
+                    <p class="product-desc">A traditional South Indian spice blend made to pair beautifully with idli, dosa and other favourite breakfast dishes.</p>
                 </article>
-                <article class="product-card" data-id="prod-8" data-img="farm/item1%20(8).png" data-name="Farm Product 8">
-                    <div class="product-img-wrap"><img alt="Farm product 8" loading="lazy" src="farm/item1%20(8).png" /></div>
-                    <h3 class="product-title">Farm Product 8</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Clean ingredients, rich flavor, and the freshness of a working farm behind it.</p>
+                <article class="product-card" data-id="prod-8" data-img="toWEBP/farmproducts/8-maa-inji-thokku.webp" data-name="Maa Inji Thokku">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Maa Inji Thokku" loading="lazy" src="toWEBP/farmproducts/8-maa-inji-thokku.webp" /></div>
+                    <h3 class="product-title">Maa Inji Thokku</h3>
+                    <p class="product-weight">Traditional and tangy</p>
+                    <p class="product-desc">A traditional ginger-based thokku made with carefully selected ingredients, bringing together warmth, spice and a tangy homemade flavour.</p>
                 </article>
-                <article class="product-card" data-id="prod-9" data-img="farm/item1%20(9).png" data-name="Farm Product 9">
-                    <div class="product-img-wrap"><img alt="Farm product 9" loading="lazy" src="farm/item1%20(9).png" /></div>
-                    <h3 class="product-title">Farm Product 9</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Prepared with attention to taste, texture, and the earthy warmth of homegrown produce.</p>
+                <article class="product-card" data-id="prod-9" data-img="toWEBP/farmproducts/9-parupu-podi.webp" data-name="Dal Powder">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Dal Powder" loading="lazy" src="toWEBP/farmproducts/9-parupu-podi.webp" /></div>
+                    <h3 class="product-title">Dal Powder</h3>
+                    <p class="product-weight">Comforting and wholesome</p>
+                    <p class="product-desc">A wholesome lentil-based powder prepared for easy everyday cooking, bringing a comforting roasted flavour to traditional meals.</p>
                 </article>
-                <article class="product-card" data-id="prod-10" data-img="farm/item1%20(10).png" data-name="Farm Product 10">
-                    <div class="product-img-wrap"><img alt="Farm product 10" loading="lazy" src="farm/item1%20(10).png" /></div>
-                    <h3 class="product-title">Farm Product 10</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">A small-batch farm favorite made from seasonal produce and time-honored methods.</p>
+                <article class="product-card" data-id="prod-10" data-img="toWEBP/farmproducts/10-pirandai-thokku.webp" data-name="Perandai Thokku">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Perandai Thokku" loading="lazy" src="toWEBP/farmproducts/10-pirandai-thokku.webp" /></div>
+                    <h3 class="product-title">Perandai Thokku</h3>
+                    <p class="product-weight">Bold and aromatic</p>
+                    <p class="product-desc">A bold homemade-style thokku combining pepper, garlic and traditional spices for a rich, spicy and aromatic flavour.</p>
                 </article>
-                <article class="product-card" data-id="prod-11" data-img="farm/item1%20(11).png" data-name="Farm Product 11">
-                    <div class="product-img-wrap"><img alt="Farm product 11" loading="lazy" src="farm/item1%20(11).png" /></div>
-                    <h3 class="product-title">Farm Product 11</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">Pure ingredients cultivated and prepared by hand to preserve nature's flavor.</p>
+                <article class="product-card" data-id="prod-11" data-img="toWEBP/farmproducts/11-turmeric-powder.webp" data-name="Turmeric Powder">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Turmeric Powder" loading="lazy" src="toWEBP/farmproducts/11-turmeric-powder.webp" /></div>
+                    <h3 class="product-title">Turmeric Powder</h3>
+                    <p class="product-weight">Earthy and vibrant</p>
+                    <p class="product-desc">Finely ground turmeric powder with a vibrant natural colour and earthy aroma, ideal for everyday cooking.</p>
                 </article>
-                <article class="product-card" data-id="prod-12" data-img="farm/item1%20(12).png" data-name="Farm Product 12">
-                    <div class="product-img-wrap"><img alt="Farm product 12" loading="lazy" src="farm/item1%20(12).png" /></div>
-                    <h3 class="product-title">Farm Product 12</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">A rich and natural farm product packed for everyday flavor and freshness.</p>
-                </article>
-                <article class="product-card" data-id="prod-13" data-img="farm/item1%20(13).png" data-name="Farm Product 13">
-                    <div class="product-img-wrap"><img alt="Farm product 13" loading="lazy" src="farm/item1%20(13).png" /></div>
-                    <h3 class="product-title">Farm Product 13</h3>
-                    <p class="product-weight">Fresh from the farm</p>
-                    <p class="product-desc">The final farm-made product in our collection, prepared with care and natural warmth.</p>
+                <article class="product-card" data-id="prod-12" data-img="toWEBP/farmproducts/12-avacado.webp" data-name="Farm Fresh Avocado">
+                    <div class="product-img-wrap"><img alt="Forest Cafe Farm Fresh Avocado" loading="lazy" src="toWEBP/farmproducts/12-avacado.webp" /></div>
+                    <h3 class="product-title">Farm Fresh Avocado</h3>
+                    <p class="product-weight">Fresh from the hill farm</p>
+                    <p class="product-desc">Fresh avocado sourced from the farm, offering a creamy texture and naturally rich flavour straight from the hills.</p>
                 </article>
             </div>
         </div>
@@ -818,7 +812,7 @@
                 </div>
                 <div class="stay-quote reveal">
                     <div class="stay-quote-media">
-                        <img alt="Illustration of a cosy room interior" loading="lazy" src="cot/item22.webp" />
+                        <img alt="Illustration of a cosy room interior" class="floating-img" loading="lazy" src="cot/item22.webp" />
                     </div>
                     <div class="stay-quote-copy">
                         <h2>Cosy rooms, big dreams</h2>
@@ -912,112 +906,194 @@
             <img alt="Forest Cafe feature image" loading="lazy" src="Black.png" />
         </div>
 
-        <!-- ============ REVIEWS ============ -->
-        <section class="section" id="reviews">
+        <!-- ============ CUSTOMER REVIEWS ============ -->
+        <section class="section reviews-section reveal" id="customer-reviews">
             <div class="shell">
-                <div class="section-head reveal">
+                <div class="reviews-header">
                     <span class="eyebrow" style="justify-content:center">
                         <svg viewbox="0 0 24 24">
                             <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
                         </svg>
-                        What people say
+                        WHAT OUR GUESTS SAY
                     </span>
-                    <h2 class="headline">Worth the drive up</h2>
+                    <h2 class="headline">Stories from the Forest</h2>
+                    <p class="lede">
+                        Loved by coffee lovers, families and travellers who stopped by Forest Cafe.
+                    </p>
                 </div>
-                <div class="quote-track reveal">
-                    <figure class="quote-card">
-                        <div aria-label="5 out of 5" class="stars">
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                        </div>
-                        <blockquote>
-                            We drove up for the coffee and ended up staying two nights. The filter coffee is the
-                            best I have had outside my grandmother's kitchen, and that is not a small thing to say.
-                        </blockquote>
-                        <figcaption class="quote-person">
-                            <span aria-hidden="true" class="quote-avatar">AR</span>
-                            <span>
-                                <span class="quote-name">Aravind R.</span>
-                                <span class="quote-from">Chennai · stayed in Bulbul</span>
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure class="quote-card">
-                        <div aria-label="5 out of 5" class="stars">
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                        </div>
-                        <blockquote>
-                            Took my parents for their anniversary. They spent the whole afternoon on the deck
-                            and my father bought half the shop on the way out. The honey has already gone.
-                        </blockquote>
-                        <figcaption class="quote-person">
-                            <span aria-hidden="true" class="quote-avatar">MS</span>
-                            <span>
-                                <span class="quote-name">Meena S.</span>
-                                <span class="quote-from">Salem · day visit</span>
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure class="quote-card">
-                        <div aria-label="4 out of 5" class="stars">
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                            <svg style="fill:rgba(201,128,58,.3)" viewbox="0 0 24 24">
-                                <path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"></path>
-                            </svg>
-                        </div>
-                        <blockquote>
-                            Open Sky cottage in December was cold, exactly as they warned us. Worth it for the
-                            stars. Bring the extra blanket they offer, do not be brave about it.
-                        </blockquote>
-                        <figcaption class="quote-person">
-                            <span aria-hidden="true" class="quote-avatar">JK</span>
-                            <span>
-                                <span class="quote-name">Jagan K.</span>
-                                <span class="quote-from">Bengaluru · stayed in Open Sky</span>
-                            </span>
-                        </figcaption>
-                    </figure>
+
+                <div class="reviews-summary" aria-label="Forest Cafe average rating summary">
+                    <div class="reviews-score">4.7</div>
+                    <div class="reviews-stars" aria-label="4.7 out of 5 stars">★★★★★</div>
+                    <div class="reviews-count">215 Google Reviews</div>
                 </div>
+
+                <div class="reviews-slider" data-slider>
+                    <button class="reviews-control reviews-control--prev" type="button" aria-label="Previous reviews">
+                        <span aria-hidden="true">←</span>
+                    </button>
+                    <div class="reviews-viewport">
+                        <div class="reviews-track">
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">M</span>
+                                        <div>
+                                            <div class="review-author">Manobala Makuds</div>
+                                            <div class="review-meta">Local Guide · 101 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">9 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“The ambiance and decorations are quite pleasing, and there is a good selection of food items available. Coffee and tea were exceptionally good. The pricing is also quite reasonable. A kids' play area, a small library, indoor and outdoor seating areas, and lodging are available.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">M</span>
+                                        <div>
+                                            <div class="review-author">Mohan M</div>
+                                            <div class="review-meta">Local Guide · 97 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">2 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“Had wonderful and memorable experience with Tiny Toy rooms and Forest Cafe. Mr Anandan and his family, staffs are really helpful and very kind to people. We loved the stay and food items. Coffee was excellent.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">G</span>
+                                        <div>
+                                            <div class="review-author">Gabriel DSouza</div>
+                                            <div class="review-meta">6 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">6 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“I am not a cafe person but I loved this ambience. The creative art decors, even the simplest things were given attention. The food was decent and service was good. Loved the fine details of the cafe.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">G</span>
+                                        <div>
+                                            <div class="review-author">Gowthaman V</div>
+                                            <div class="review-meta">8 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">1 year ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“It's a good resort to stay, beautiful rooms, foods are of good quality, tasty, the restaurant and its surroundings with lots of arts and crafts looks very beautiful. Ultimately the owner couple are very friendly and hospitable.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">D</span>
+                                        <div>
+                                            <div class="review-author">Dheeraj Aithal</div>
+                                            <div class="review-meta">Local Guide · 81 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">7 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“A treasure in this part of the world. Their cakes were lovely and the design of the place was beautiful. The cappuccino though I would avoid, but overall a memorable place to visit around this region.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">V</span>
+                                        <div>
+                                            <div class="review-author">varadan bathmanaban</div>
+                                            <div class="review-meta">5 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">2 years ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“We were quite surprised to find such an amazing ambience and warm service. Only the best coffee shop in Kalvarayan hills. Planning to take family as well.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">M</span>
+                                        <div>
+                                            <div class="review-author">Muthamil Selvan</div>
+                                            <div class="review-meta">Local Guide · 16 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">9 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“Chill spot! Cosy vibes, creative decor, and decent eats. Perfect for a catch-up or work session. Would head back for the vibes alone.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">V</span>
+                                        <div>
+                                            <div class="review-author">vaasu prasath</div>
+                                            <div class="review-meta">8 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">7 months ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“The atmosphere at Forest Cafe is awesome, and the food is very good. The cold coffee and filter coffee are especially excellent, and the sandwiches are tasty as well. The Maa Inji pickle is simply ultimate.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">N</span>
+                                        <div>
+                                            <div class="review-author">Niranjankumar E</div>
+                                            <div class="review-meta">Local Guide · 46 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">1 year ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“Wonderful ambience. Great snacks options! It's so delicious.”</p>
+                            </article>
+
+                            <article class="review-card">
+                                <div class="review-card-top">
+                                    <div class="review-author-wrap">
+                                        <span class="review-avatar" aria-hidden="true">T</span>
+                                        <div>
+                                            <div class="review-author">The Dark Guide</div>
+                                            <div class="review-meta">Local Guide · 265 reviews</div>
+                                        </div>
+                                    </div>
+                                    <span class="review-time">2 years ago</span>
+                                </div>
+                                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <p class="review-text">“Good cafe at Kalvarayan hills. The ambience is too good and creative. The food was good. The dogs and cats were friendly and beautiful. Overall a must visit cafe there.”</p>
+                            </article>
+                        </div>
+                    </div>
+                    <button class="reviews-control reviews-control--next" type="button" aria-label="Next reviews">
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+
+                <div class="reviews-dots" aria-label="Review pagination"></div>
             </div>
         </section>
+
         <!-- ============ VISIT ============ -->
         <section class="section" id="visit">
             <div class="shell visit-grid">
@@ -1056,7 +1132,7 @@
                             </span>
                             <div>
                                 <div class="contact-label">Phone</div>
-                                <div class="contact-value"><a href="tel:+919876543210">+91 98765 43210</a></div>
+                                <div class="contact-value"><a href="tel:+919444060619">+91 94440 60619</a></div>
                             </div>
                         </li>
                         <li>
@@ -1068,7 +1144,7 @@
                             <div>
                                 <div class="contact-label">Email</div>
                                 <div class="contact-value">
-                                    <a href="mailto:hello@forestcafe.in">hello@forestcafe.in</a>
+                                    <a data-cms="emailLink" data-cms-text="emailText" href="mailto:forestcafe.khilla@gmail.com">forestcafe.khilla@gmail.com</a>
                                 </div>
                             </div>
                         </li>
@@ -1080,26 +1156,23 @@
                             </span>
                             <div style="flex:1">
                                 <div class="contact-label">Hours</div>
-                                <div class="hours-row">
-                                    <span>Monday to Friday</span><span>8:00 am – 9:00 pm</span>
-                                </div>
-                                <div class="hours-row">
-                                    <span>Saturday &amp; Sunday</span><span>
-                                        7:30 am – 9:30
-                                        pm
-                                    </span>
-                                </div>
-                                <div class="hours-row"><span>Kitchen last order</span><span>8:15 pm</span></div>
+                                <div class="hours-row"><span>Friday</span><span>9:30 am – 7 pm</span></div>
+                                <div class="hours-row"><span>Saturday</span><span>9:30 am – 7 pm</span></div>
+                                <div class="hours-row"><span>Sunday</span><span>9:30 am – 7 pm</span></div>
+                                <div class="hours-row"><span>Monday</span><span>9:30 am – 7 pm</span></div>
+                                <div class="hours-row"><span>Tuesday</span><span>Closed</span></div>
+                                <div class="hours-row"><span>Wednesday</span><span>9:30 am – 7 pm</span></div>
+                                <div class="hours-row"><span>Thursday</span><span>9:30 am – 7 pm</span></div>
                             </div>
                         </li>
                     </ul>
                     <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
                         <a class="btn btn--solid" href="https://www.google.com/maps/search/?api=1&amp;query=Kalrayan+Hills+Tamil+Nadu" rel="noopener" target="_blank">Get directions <span class="arrow">→</span></a>
-                        <a class="btn btn--ghost" href="tel:+919876543210">Call the cafe</a>
+                        <a class="btn btn--ghost" href="tel:+919444060619">Call the cafe</a>
                     </div>
                 </div>
                 <div class="map-wrap reveal">
-                    <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kalrayan%20Hills%2C%20Tamil%20Nadu&amp;z=11&amp;output=embed" title="Map showing Forest Cafe in the Kalrayan Hills"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.8508410384775!2d78.68265587403198!3d11.811751339246669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab7f510b0e02f5%3A0x521fd4cb77b6f9b2!2sForest%20Cafe!5e1!3m2!1sen!2sin!4v1790320292527!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </section>
@@ -1119,16 +1192,19 @@
 <span class="brand-sub">Kalrayan Hills</span>
 </span>
 </a>
-<p class="footer-about">Coffee grown on the slope, food from the farm below it, and six rooms for anyone
-                    who does not want to drive back down in the dark.</p>
+<div class="footer-contact">
+<p>No 367/2, servaiyattu, vellimalai road, karumandurai,<br />kalvarayan hills, salem-636 138.</p>
+<p>ph no: <a data-cms="phoneLink" data-cms-text="phoneText" href="tel:+919444060619">9444060619</a></p>
+<p>e-mail: <a data-cms="emailLink" data-cms-text="emailText" href="mailto:forestcafe.khilla@gmail.com">forestcafe.khilla@gmail.com</a></p>
+</div>
 <div class="socials">
-<a aria-label="Instagram" href="#"><svg viewbox="0 0 24 24">
+<a aria-label="Instagram" data-cms="instaLink" href="https://www.instagram.com/forestcafe.khills?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><svg viewbox="0 0 24 24">
 <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.7.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.7-.1-4.9s0-3.5.1-4.8C2.3 4 3.9 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 5.1A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z"></path>
 </svg></a>
 <a aria-label="Facebook" href="#"><svg viewbox="0 0 24 24">
 <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6A22 22 0 0 0 14.3 4.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V14h2.7v8z"></path>
 </svg></a>
-<a aria-label="WhatsApp" href="#"><svg viewbox="0 0 24 24">
+<a aria-label="WhatsApp" data-cms="waLink" href="https://wa.me/919444060619?text=Hi%20Forest%20Cafe%2C%20I%20want%20to%20know%20more%20about%20your%20stay%20and%20cafe." target="_blank" rel="noopener"><svg viewbox="0 0 24 24">
 <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2s-1.1.3-3.6-.8-4-3.6-4.2-3.8-1.2-1.6-1.2-3 .8-2.1 1-2.4.5-.3.7-.3h.6c.2 0 .4 0 .6.5s.8 2 .9 2.1a.5.5 0 0 1 0 .5 7 7 0 0 1-.5.7c-.2.2-.4.4-.2.7a9.6 9.6 0 0 0 1.7 2.1 8.4 8.4 0 0 0 2.5 1.5c.3.2.5.1.7-.1s.8-.9 1-1.2.4-.2.7-.1 1.9.9 2.2 1.1.5.3.6.4a2 2 0 0 1-.1.9z"></path>
 </svg></a>
 <a aria-label="YouTube" href="#"><svg viewbox="0 0 24 24">
@@ -1371,6 +1447,7 @@
             requestUpdate();
         })();
     </script>
+<script src="js/cms.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

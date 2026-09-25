@@ -180,8 +180,140 @@
   }());
 
   /* ======================================================================
-     5. Cafe photo stack + full gallery + lightbox
+     5. Customer reviews slider
      ====================================================================== */
+  (function reviewsSlider() {
+    var section = $('#customer-reviews');
+    if (!section) return;
+
+    var viewport = section.querySelector('.reviews-viewport');
+    var track = section.querySelector('.reviews-track');
+    var cards = Array.prototype.slice.call(section.querySelectorAll('.review-card'));
+    var prev = section.querySelector('.reviews-control--prev');
+    var next = section.querySelector('.reviews-control--next');
+    var dotsWrap = section.querySelector('.reviews-dots');
+
+    if (!viewport || !track || !cards.length) return;
+
+    var state = {
+      index: 0,
+      touchStartX: 0,
+      touchEndX: 0
+    };
+    var autoTimer = null;
+
+    function getVisibleCards() {
+      return window.innerWidth <= 700 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+    }
+
+    function getGap() {
+      var styles = window.getComputedStyle(track);
+      return parseFloat(styles.gap || '0') || 0;
+    }
+
+    function getSlideWidth() {
+      return cards[0].getBoundingClientRect().width + getGap();
+    }
+
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      var maxIndex = Math.max(cards.length - getVisibleCards(), 0);
+      for (var i = 0; i <= maxIndex; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'reviews-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to review slide ' + (i + 1));
+        dot.addEventListener('click', function () {
+          state.index = Number(this.dataset.index);
+          updateSlider();
+        });
+        dot.dataset.index = String(i);
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateSlider() {
+      var visibleCards = getVisibleCards();
+      var maxIndex = Math.max(cards.length - visibleCards, 0);
+      state.index = Math.min(Math.max(state.index, 0), maxIndex);
+
+      track.style.setProperty('--review-columns', visibleCards);
+      var move = state.index * getSlideWidth();
+      track.style.transform = 'translateX(-' + move + 'px)';
+
+      if (prev) prev.disabled = false;
+      if (next) next.disabled = false;
+
+      var dots = dotsWrap ? dotsWrap.querySelectorAll('.reviews-dot') : [];
+      dots.forEach(function (dot, idx) {
+        dot.classList.toggle('is-active', idx === state.index);
+      });
+    }
+
+    function move(direction) {
+      var visibleCards = getVisibleCards();
+      var maxIndex = Math.max(cards.length - visibleCards, 0);
+      if (maxIndex === 0) return;
+
+      if (direction > 0 && state.index >= maxIndex) {
+        state.index = 0;
+      } else if (direction < 0 && state.index <= 0) {
+        state.index = maxIndex;
+      } else {
+        state.index = Math.min(Math.max(state.index + direction, 0), maxIndex);
+      }
+
+      updateSlider();
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function startAuto() {
+      if (reduceMotion) return;
+      stopAuto();
+      var visibleCards = getVisibleCards();
+      var maxIndex = Math.max(cards.length - visibleCards, 0);
+      if (maxIndex <= 0) return;
+      autoTimer = setInterval(function () {
+        state.index = state.index >= maxIndex ? 0 : state.index + 1;
+        updateSlider();
+      }, 5000);
+    }
+
+    if (prev) prev.addEventListener('click', function () { stopAuto(); move(-1); startAuto(); });
+    if (next) next.addEventListener('click', function () { stopAuto(); move(1); startAuto(); });
+
+    viewport.addEventListener('touchstart', function (event) {
+      state.touchStartX = event.touches[0].clientX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function (event) {
+      state.touchEndX = event.changedTouches[0].clientX;
+      var delta = state.touchEndX - state.touchStartX;
+      if (Math.abs(delta) > 50) {
+        stopAuto();
+        move(delta < 0 ? 1 : -1);
+        startAuto();
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      buildDots();
+      updateSlider();
+      startAuto();
+    });
+
+    buildDots();
+    updateSlider();
+    startAuto();
+  }());
+
   var galleryImages = [
     'CafeImg/cafe-01.jpg', 'CafeImg/cafe-05.jpg', 'CafeImg/cafe-06.jpg',
     'CafeImg/cafe-11.jpg', 'CafeImg/cafe-14.jpg', 'CafeImg/cafe-18.jpg',
