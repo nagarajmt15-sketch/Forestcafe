@@ -2169,24 +2169,6 @@ textarea {
         right: -60px;
     }
 
-.stay-feature-banner {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: clamp(12px, 2vw, 26px);
-    background: #000;
-    overflow: hidden;
-    z-index: 1;
-}
-
-    .stay-feature-banner img {
-        display: block;
-        width: 100%;
-        height: clamp(620px, 74vw, 1050px);
-        object-fit: cover;
-        object-position: center center;
-        filter: saturate(0.9) contrast(1.05);
-    }
-
 #rooms {
     position: relative;
     z-index: 2;
@@ -2903,12 +2885,6 @@ textarea {
     }
 }
 
-/* ========== 17. Base layout ========== */
-
-
-
-
-
 
 /* ========== 19. Print ========== */
 @media print {
@@ -2928,3 +2904,706 @@ textarea {
         break-inside: avoid;
     }
 }
+/* =========================================================
+   OUR STORY SECTION
+========================================================= */
+
+#owner-story {
+    position: relative;
+    z-index: 2;
+    padding-top: 150px;
+    padding-bottom: 160px;
+    margin: 0;
+    background: var(--cream);
+    overflow: visible;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.owner-story-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center center;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP BACKGROUND BLEND
+========================================================= */
+
+#owner-story::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient( to bottom, var(--cream) 0%, #F3F0E6 30%, var(--cream-deep) 70%, transparent 100% );
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   BOTTOM BACKGROUND BLEND
+========================================================= */
+
+#owner-story::after {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient( to bottom, transparent 0%, var(--cream-deep) 30%, #F3F0E6 70%, var(--cream) 100% );
+    pointer-events: none;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   MAIN SHELL
+========================================================= */
+
+.owner-story-shell {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   STORY + OWNER PHOTO
+
+   IMPORTANT:
+   This is the ONLY grid containing the sticky photo.
+
+   Once this grid ends at the closing statement,
+   the sticky photo stops.
+========================================================= */
+
+.owner-story-content {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.75fr);
+    gap: 80px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   STORY COPY
+========================================================= */
+
+.owner-story-copy {
+    min-width: 0;
+    max-width: 850px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.owner-story-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #f4f0e4;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.owner-story-title {
+    max-width: 850px;
+    margin-top: 8px;
+    margin-bottom: 52px;
+    color: #f4f0e4;
+    line-height: 1.05;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 1);
+}
+
+
+/* =========================================================
+   STORY LETTER
+========================================================= */
+
+.owner-story-letter {
+    position: relative;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+
+/* =========================================================
+   STORY BLOCK
+========================================================= */
+
+.owner-story-block {
+    max-width: 820px;
+    margin: 0 0 58px;
+}
+
+
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
+.owner-story-text {
+    max-width: 820px;
+}
+
+
+/* =========================================================
+   STORY PARAGRAPHS
+========================================================= */
+
+.owner-story-letter p {
+    max-width: 820px;
+    margin: 0 0 20px;
+    color: #f1eee5;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+    text-align: left;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================================
+   STRONG TEXT
+========================================================= */
+
+.owner-story-letter strong {
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.98);
+}
+
+
+/* =========================================================
+   STORY SUBTITLE
+========================================================= */
+
+.owner-story-subtitle {
+    margin: 0 0 24px;
+    color: #f4f0e4;
+    font-family: var(--font-display);
+    font-size: 2.15rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    text-align: left;
+    text-shadow: 0 3px 9px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================================
+   CLOSING STATEMENT
+
+   This is the last element inside the sticky-photo grid.
+========================================================= */
+
+.owner-story-closing {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+
+/* =========================================================
+   FINAL LINE
+========================================================= */
+
+.owner-story-final {
+    margin-top: 28px !important;
+    color: #ffffff !important;
+    font-family: var(--font-display) !important;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.98);
+}
+
+
+/* =========================================================
+   OWNER PHOTO WRAPPER
+
+   The sticky photo belongs ONLY to the story/photo grid.
+   When .owner-story-content ends, the sticky effect ends.
+========================================================= */
+
+.owner-photo-wrap {
+    position: sticky;
+    top: 110px;
+    width: 100%;
+    align-self: start;
+}
+
+
+/* =========================================================
+   OWNER PHOTO
+========================================================= */
+
+.owner-photo {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #18271f;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   OWNER IMAGE
+========================================================= */
+
+.owner-photo-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 30px;
+}
+
+
+/* =========================================================
+   PHOTO BOTTOM GRADIENT
+========================================================= */
+
+.owner-photo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.52) 45%, rgba(0, 0, 0, 0) 100% );
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PHOTO CAPTION
+========================================================= */
+
+.owner-photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 35px 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: left;
+}
+
+
+/* =========================================================
+   PHOTO NAME
+========================================================= */
+
+.owner-photo-name {
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+
+/* =========================================================
+   PHOTO ROLE
+========================================================= */
+
+.owner-photo-role {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   CREATOR PHILOSOPHY CONTAINER
+
+   IMPORTANT:
+   This is OUTSIDE .owner-story-content.
+
+   Therefore the owner photo's sticky effect
+   has already ended before this section.
+========================================================= */
+
+.creator-philosophy-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CREATOR PHILOSOPHY
+========================================================= */
+
+.creator-philosophy {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 500px;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    overflow: hidden;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   PHILOSOPHY LABEL
+========================================================= */
+
+.creator-philosophy-label {
+    margin-bottom: 32px;
+    color: rgba(244, 240, 228, 0.62);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PHILOSOPHY QUOTE
+========================================================= */
+
+.creator-philosophy-quote {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   QUOTE MARK
+========================================================= */
+
+.creator-quote-mark {
+    position: absolute;
+    top: -30px;
+    left: 7%;
+    color: #A96C0A;
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PHILOSOPHY TEXT
+========================================================= */
+
+.creator-philosophy-quote h3 {
+    margin: 0;
+    color: #F4E9D0;
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   ART & DRAWING SECTION
+
+   ALSO OUTSIDE THE STORY/PHOTO GRID.
+========================================================= */
+
+.art-class-section {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 40px 0 30px;
+    background: transparent;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ART CLASS TOP
+========================================================= */
+
+.art-class-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   ART CLASS LABEL
+========================================================= */
+
+.art-class-label {
+    color: rgba(244, 240, 228, 0.62);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.23em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.art-class-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    border: 1px solid rgba(201, 128, 58, 0.75);
+    border-radius: 30px;
+    color: #C9803A;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ART CLASS TITLE
+========================================================= */
+
+.art-class-title {
+    margin: 0 55px 20px;
+    color: #F4E9D0;
+    font-family: var(--font-display);
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+    /* =========================================================
+   ART CLASS SECOND LINE
+========================================================= */
+
+    .art-class-title span {
+        color: #D99A63;
+    }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.art-class-description {
+    max-width: 780px;
+    margin: 0 55px 34px;
+    color: rgba(244, 240, 228, 0.72);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   ART GALLERY
+========================================================= */
+
+.art-class-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 0 55px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   ART CARD
+========================================================= */
+
+.art-class-card {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #334638;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   CARD 1
+========================================================= */
+
+.art-card-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+
+.art-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+.art-card-small {
+    color: #29271f;
+    font-family: var(--font-body);
+    font-size: 0.48rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+
+.art-card-title-script {
+    color: #28231d;
+    font-family: Georgia, serif;
+    font-size: 1.65rem;
+    font-style: italic;
+    line-height: 1;
+}
+
+
+.art-card-location {
+    color: #28231d;
+    font-family: var(--font-body);
+    font-size: 0.4rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+
+.art-card-bubble {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 11px 13px;
+    border-radius: 0 0 0 20px;
+    background: #C58A4C;
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   CARD 2
+========================================================= */
+
+.art-card-supplies {
+    background: white;
+}
+
+
+
+/* =========================================================
+   CARD 3
+========================================================= */
+
+.art-card-cafe {
+    background: white;
+}
+
+
+
+/* =========================================================
+   CARD 4
+========================================================= */
+
+.art-card-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 145deg, #7C856E, #4C594A );
+}
+
+
+/* =========================================================
+   ART CLASS BOTTOM
+========================================================= */
+
+.art-class-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 55px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(244, 240, 228, 0.12);
+    color: rgba(244, 240, 228, 0.62);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+
