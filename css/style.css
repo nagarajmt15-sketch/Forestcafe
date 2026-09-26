@@ -1958,7 +1958,7 @@ textarea {
     width: 100%;
     min-height: 0px;
     /* Top color + bottom color */
-    background: linear-gradient( to bottom, #EFEADB 0%, #EFEADB 50%, #F7F4EB 50%, #F7F4EB 100% );
+    background: linear-gradient( to bottom, #EFEADB 0%, #EFEADB 55%, #F7F4EB 55%, #F7F4EB 100% );
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -2166,12 +2166,14 @@ textarea {
 
 /* ========== Stay → Rooms smooth background ========== */
 
+
+
 .stay-section {
     position: relative;
     z-index: 1;
     margin-bottom: 0;
     /* Stay starts cream/blue and smoothly returns to Rooms cream */
-    background: linear-gradient( to bottom, var(--cream) 0%, var(--stay-050) 55%, var(--stay-050) 82%, #F4F5EF 92%, var(--cream) 100% );
+    background: linear-gradient(to bottom, var(--cream) 0%, var(--stay-050) 55%, var(--stay-050) 82%, #F4F5EF 92%, var(--cream) 100%);
 }
 
 /* Rooms starts with exactly the same color */
@@ -2202,7 +2204,6 @@ textarea {
     .stay-divider::after {
         right: -60px;
     }
-
 #rooms {
     position: relative;
     z-index: 2;
@@ -2210,7 +2211,6 @@ textarea {
     padding-bottom: clamp(42px, 6vw, 100px);
     background: var(--cream);
 }
-
 #reviews {
     padding-top: clamp(18px, 3vw, 32px);
 }
@@ -2255,6 +2255,23 @@ textarea {
         border-radius: 58% 42% 45% 55% / 45% 55% 45% 55%;
     }
 }
+
+.stay-warm-note {
+    margin-top: 18px;
+    padding: 12px 18px;
+    border-left: 3px solid var(--honey);
+    background: rgba(201, 128, 58, 0.08);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+    .stay-warm-note p {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--stay-700);
+        line-height: 1.5;
+        margin: 0;
+    }
 
 .stay-quote {
     display: flex;
@@ -3642,22 +3659,61 @@ textarea {
     overflow: hidden;
 }
 
+.ad-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
 .ad-background {
     position: absolute;
-    inset: 0;
+    top: -140px; /* MOVE BLACK IMAGE UP */
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 200px);
     display: block;
-    z-index: -1;
     object-fit: cover;
     object-position: center center;
+    z-index: 0;
     pointer-events: none;
-    -webkit-mask-image: radial-gradient(circle at 8% 50%, transparent 0 16%, #000 17% 100%), radial-gradient(circle at 92% 50%, transparent 0 16%, #000 17% 100%), linear-gradient(to right, #000 0%, #000 100%);
-    mask-image: radial-gradient(circle at 8% 50%, transparent 0 16%, #000 17% 100%), radial-gradient(circle at 92% 50%, transparent 0 16%, #000 17% 100%), linear-gradient(to right, #000 0%, #000 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
+}
+
+/* =========================================================
+   TOP CURVE
+========================================================= */
+
+.ad-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 110px;
+    background: var(--cream);
+    border-radius: 0 0 50% 50%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* =========================================================
+   BOTTOM CURVE
+========================================================= */
+
+.ad-section::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: -5%;
+    width: 110%;
+    height: 110px;
+    background: var(--cream);
+    border-radius: 50% 50% 0 0;
+    z-index: 3;
+    pointer-events: none;
 }
 
 .ad-shell {
@@ -3667,8 +3723,7 @@ textarea {
 
 .ad-block {
     max-width: 980px;
-    margin: 0 auto 110px;
-}
+    margin: 10px auto 80px;
 
 .ad-block:last-child {
     margin-bottom: 0;
