@@ -4,23 +4,22 @@
   const PRODUCT_LIST = [
     'prod-1', 'prod-2', 'prod-3', 'prod-4', 'prod-5',
     'prod-6', 'prod-7', 'prod-8', 'prod-9', 'prod-10',
-    'prod-11', 'prod-12', 'prod-13'
+    'prod-11', 'prod-12'
   ];
 
   const PRODUCT_NAMES = {
-    'prod-1': 'Farm Product 1',
-    'prod-2': 'Farm Product 2',
-    'prod-3': 'Farm Product 3',
-    'prod-4': 'Farm Product 4',
-    'prod-5': 'Farm Product 5',
-    'prod-6': 'Farm Product 6',
-    'prod-7': 'Farm Product 7',
-    'prod-8': 'Farm Product 8',
-    'prod-9': 'Farm Product 9',
-    'prod-10': 'Farm Product 10',
-    'prod-11': 'Farm Product 11',
-    'prod-12': 'Farm Product 12',
-    'prod-13': 'Farm Product 13'
+    'prod-1': 'Pure Coffee',
+    'prod-2': '70/30 Coffee Blend',
+    'prod-3': '80/20 Coffee Blend',
+    'prod-4': 'Tea Dust',
+    'prod-5': 'Honey',
+    'prod-6': 'Curry Leaf Powder',
+    'prod-7': 'Idli Podi',
+    'prod-8': 'Maa Inji Thokku',
+    'prod-9': 'Dal Powder',
+    'prod-10': 'Perandai Thokku',
+    'prod-11': 'Turmeric Powder',
+    'prod-12': 'Farm Fresh Avocado'
   };
 
   const DEFAULTS = {
